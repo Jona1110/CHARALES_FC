@@ -56,44 +56,57 @@ img[src="imagen.png"], img[src="../imagen.png"], img[src="../image.png"], .team-
 .close-menu { position: absolute; top: 30px; right: 30px; font-size: 3rem; color: var(--white); cursor: pointer; line-height: 1; }
 .mobile-menu a { color: var(--white); text-decoration: none; font-size: 1.5rem; font-weight: 900; }
 
-/* --- Hero Dividido (Inicio) --- */
+/* --- HERO INMERSIVO (Imagen de fondo integrada) --- */
 .hero-split { 
     display: flex; 
     align-items: center; 
+    justify-content: center;
     min-height: 100vh; 
     padding-top: 130px; 
-    padding-bottom: 150px; 
-    background: var(--white); 
+    padding-bottom: 180px; 
+    /* Gradiente oscuro sobre portada1.png para que el texto sea legible */
+    background: linear-gradient(to bottom, rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.85)), url('portada1.png') center/cover no-repeat;
     width: 100%; 
-    gap: 2rem;
+    position: relative;
 }
-.hero-text { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-left: 10%; z-index: 2; }
-.season-badge { background: var(--navy); color: var(--white); padding: 8px 18px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 2px; align-self: flex-start; }
-.hero-text h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.05; color: var(--navy); margin-bottom: 1.5rem; }
-.hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 500px; }
-.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-.btn-solid-red { background: var(--red); color: var(--white); padding: 14px 30px; text-decoration: none; font-weight: 900; transition: 0.3s; border: 2px solid var(--red); box-shadow: 0 5px 15px rgba(211,30,43,0.2); }
-.btn-solid-red:hover { background: transparent; color: var(--red); box-shadow: none; transform: translateY(-2px); }
-.btn-outline-blue { background: transparent; color: var(--blue); padding: 14px 30px; text-decoration: none; font-weight: 900; border: 2px solid var(--blue); transition: 0.3s; }
-.btn-outline-blue:hover { background: var(--blue); color: var(--white); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(28,59,119,0.2); }
 
-.hero-visual { flex: 1.2; display: flex; justify-content: flex-end; align-items: center; padding-right: 0; }
-.hero-img-fluid { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 50px 0 0 50px; box-shadow: -15px 15px 40px rgba(0,0,0,0.1); }
+.hero-text { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; /* Centrado total */
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px; 
+    z-index: 2; 
+}
+.season-badge { background: var(--red); color: var(--white); padding: 8px 18px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 2px; }
+.hero-text h1 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; line-height: 1.05; color: var(--white); margin-bottom: 1.5rem; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.hero-text h1 span.txt-red { color: var(--red); }
+.hero-text p { font-size: 1.15rem; color: #cbd5e1; margin-bottom: 2.5rem; max-width: 600px; }
+.hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
 
-/* Tarjeta Partido Glassmorphism */
-.match-glass-section { position: relative; margin-top: -100px; z-index: 10; padding: 0 20px; display: flex; justify-content: center; }
-.glass-card { background: rgba(13, 27, 42, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255,255,255,0.15); width: 100%; max-width: 950px; padding: 3rem; box-shadow: 0 25px 60px rgba(0,0,0,0.3); color: var(--white); }
+/* Botones Hero */
+.btn-solid-red { background: var(--red); color: var(--white); padding: 14px 30px; text-decoration: none; font-weight: 900; transition: 0.3s; border: 2px solid var(--red); box-shadow: 0 5px 15px rgba(211,30,43,0.4); }
+.btn-solid-red:hover { background: transparent; color: var(--white); box-shadow: none; transform: translateY(-2px); border-color: var(--white); }
+.btn-outline-white { background: transparent; color: var(--white); padding: 14px 30px; text-decoration: none; font-weight: 900; border: 2px solid var(--white); transition: 0.3s; border-radius: 50px; }
+.btn-outline-white:hover { background: var(--white); color: var(--navy); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,255,255,0.2); }
+
+/* --- TARJETA PARTIDO GLASSMORPHISM --- */
+.match-glass-section { position: relative; margin-top: -120px; z-index: 10; padding: 0 20px; display: flex; justify-content: center; }
+.glass-card { background: rgba(13, 27, 42, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border: 1px solid rgba(255,255,255,0.15); width: 100%; max-width: 950px; padding: 3rem; box-shadow: 0 25px 60px rgba(0,0,0,0.4); color: var(--white); }
 .glass-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 30px; }
 .tag-league, .tag-stadium { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px 18px; font-size: 0.8rem; font-weight: 700; color: #cbd5e1; }
 .tag-stadium i { color: var(--red); margin-right: 5px; }
 
-.match-teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-.team-col { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 30%; }
+.match-teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; width: 100%; }
+.team-col { display: flex; flex-direction: column; align-items: center; gap: 15px; width: 33%; }
 .team-shield { height: 100px; width: 100px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
-.team-name { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-.match-center-info { text-align: center; }
+.team-name { font-weight: 900; font-size: 1.3rem; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); text-align: center; }
+.match-center-info { width: 33%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .vs { font-size: 2.8rem; font-weight: 900; color: var(--red); font-style: italic; line-height: 1; text-shadow: 0 4px 10px rgba(211,30,43,0.3); }
-.date-badge { background: rgba(255,255,255,0.15); padding: 8px 22px; font-size: 0.85rem; margin-top: 15px; font-weight: 700; border: 1px solid rgba(255,255,255,0.05); }
+.date-badge { background: rgba(255,255,255,0.15); padding: 8px 22px; font-size: 0.85rem; margin-top: 15px; font-weight: 700; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
 
 .countdown-row { display: flex; justify-content: center; gap: 15px; align-items: center; color: var(--red); }
 .colon { font-size: 2.5rem; font-weight: 900; margin-top: -15px; opacity: 0.5; }
@@ -222,7 +235,7 @@ img[src="imagen.png"], img[src="../imagen.png"], img[src="../image.png"], .team-
 
 
 /* =======================================================
-   --- AJUSTES RESPONSIVOS (Móvil Premium) ---
+   --- AJUSTES RESPONSIVOS (Móvil Premium Integrado) ---
    ======================================================= */
 @media (max-width: 1024px) {
     .dashboard-grid { flex-direction: column; }
@@ -233,52 +246,53 @@ img[src="imagen.png"], img[src="../imagen.png"], img[src="../image.png"], .team-
 }
 
 @media (max-width: 900px) {
-    /* Hero Principal en Celular: Fiel a la captura (Izquierda) + Foto abajo */
+    /* Hero Principal en Celular: Imagen de fondo y texto centrado */
     .hero-split { 
-        flex-direction: column; 
-        padding-top: 110px; 
-        padding-bottom: 100px; 
-        gap: 2.5rem;
+        padding-top: 140px; 
+        padding-bottom: 120px; 
     }
     .hero-text { 
-        padding: 0 20px; 
-        text-align: left; /* Mantiene la estética de la imagen que enviaste */
-        align-items: flex-start; 
+        padding: 0 5%; 
     }
-    .hero-text h1 { font-size: clamp(2.8rem, 8vw, 3.5rem); }
+    .hero-text h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); }
     .hero-buttons { 
-        justify-content: flex-start; 
+        flex-direction: column; 
         width: 100%;
-        flex-direction: column; /* Botones apilados para mayor usabilidad móvil */
         gap: 15px;
     }
-    .btn-solid-red, .btn-outline-blue {
+    .btn-solid-red, .btn-outline-white {
         width: 100%;
         text-align: center;
     }
     
-    .hero-visual { 
-        width: 100%;
-        padding: 0 20px; 
-        justify-content: center;
-    }
-    .hero-img-fluid { 
-        border-radius: 28px; /* Todas las esquinas curvas en móvil */
-        width: 100%; 
-        aspect-ratio: 4 / 3; /* Proporción ideal para celular */
-    }
+    /* CRÍTICO: MARCADOR HORIZONTAL EN MÓVIL (Como scoreboard real) */
+    .match-glass-section { margin-top: -60px; padding: 0 15px; }
+    .glass-card { padding: 1.5rem; }
     
-    /* Ajustes Generales Móvil */
-    .match-glass-section { margin-top: -50px; }
-    .glass-card { padding: 2rem 1.5rem; }
-    .match-teams { flex-direction: column; gap: 20px; }
+    .glass-header { flex-direction: column; gap: 10px; align-items: center; padding-bottom: 15px; margin-bottom: 20px; }
+    
+    /* Mantiene los escudos de lado a lado en móvil */
+    .match-teams { flex-direction: row; gap: 10px; align-items: center; margin-bottom: 20px; }
+    
+    .team-col { width: 33%; gap: 8px; }
+    .team-shield { height: 60px; width: 60px; } /* Logos más pequeños para móvil */
+    .team-name { font-size: 0.9rem; }
+    
+    .match-center-info { width: 33%; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+    .vs { font-size: 2rem; }
+    .date-badge { padding: 4px 10px; font-size: 0.7rem; margin-top: 5px; }
+    
+    .countdown-row { gap: 10px; }
     .colon { display: none; } 
-    .time-unit span { font-size: 2.2rem; }
+    .time-unit span { font-size: 2rem; }
+    .time-unit small { font-size: 0.65rem; }
     
+    /* Votación Jugador */
     .motm-layout { flex-direction: column; text-align: center; }
     .player-option { flex-direction: column; text-align: center; }
     .player-option:hover { transform: translateY(-5px); }
     
+    /* Footer & Header general */
     .footer-content { flex-direction: column; text-align: center; }
     .page-header { padding: 120px 20px 40px; }
 }
