@@ -17,16 +17,19 @@ body.theme-light { font-family: 'Montserrat', sans-serif; background: var(--ligh
 .txt-red { color: var(--red); }
 .txt-blue-bold { color: var(--blue); font-weight: 900; }
 .txt-bold { font-weight: 900; }
+.txt-gray { color: var(--text-muted); }
+.uppercase { text-transform: uppercase; }
+.mt-2 { margin-top: 10px; }
 
 .rounded-pill { border-radius: 50px !important; }
 .rounded-card { border-radius: 28px !important; overflow: hidden; } 
 
-img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
+img[src="imagen.png"], img[src="../imagen.png"], img[src="../image.png"], .team-shield, .micro-logo, .nav-logo {
     border-radius: 50%; object-fit: cover; background: var(--white);
     border: 2px solid var(--blue); padding: 2px;
 }
 
-/* Navegación Flotante */
+/* Navegación Flotante (Inicio) */
 .navbar-floating {
     position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1200px;
     background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 50px;
@@ -53,7 +56,7 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
 .close-menu { position: absolute; top: 30px; right: 30px; font-size: 3rem; color: var(--white); cursor: pointer; line-height: 1; }
 .mobile-menu a { color: var(--white); text-decoration: none; font-size: 1.5rem; font-weight: 900; }
 
-/* --- Hero Dividido - SOLUCIÓN RESPONSIVA --- */
+/* --- Hero Dividido (Inicio) --- */
 .hero-split { 
     display: flex; 
     align-items: center; 
@@ -64,42 +67,18 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
     width: 100%; 
     gap: 2rem;
 }
-
-.hero-text { 
-    flex: 1; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    padding-left: 10%; 
-    z-index: 2; 
-}
+.hero-text { flex: 1; display: flex; flex-direction: column; justify-content: center; padding-left: 10%; z-index: 2; }
 .season-badge { background: var(--navy); color: var(--white); padding: 8px 18px; font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 2px; align-self: flex-start; }
 .hero-text h1 { font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.05; color: var(--navy); margin-bottom: 1.5rem; }
 .hero-text p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 500px; }
 .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
-
 .btn-solid-red { background: var(--red); color: var(--white); padding: 14px 30px; text-decoration: none; font-weight: 900; transition: 0.3s; border: 2px solid var(--red); box-shadow: 0 5px 15px rgba(211,30,43,0.2); }
 .btn-solid-red:hover { background: transparent; color: var(--red); box-shadow: none; transform: translateY(-2px); }
 .btn-outline-blue { background: transparent; color: var(--blue); padding: 14px 30px; text-decoration: none; font-weight: 900; border: 2px solid var(--blue); transition: 0.3s; }
 .btn-outline-blue:hover { background: var(--blue); color: var(--white); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(28,59,119,0.2); }
 
-/* Contenedor y Foto de Portada */
-.hero-visual { 
-    flex: 1.2; 
-    display: flex;
-    justify-content: flex-end; 
-    align-items: center;
-    padding-right: 0;
-}
-
-.hero-img-fluid {
-    width: 100%;
-    height: auto; 
-    aspect-ratio: 16 / 10; /* Fuerza una proporción ideal para que se vea la acción y la grada */
-    object-fit: cover; /* Asegura que la imagen llene la proporción sin aplastarse */
-    border-radius: 50px 0 0 50px; 
-    box-shadow: -15px 15px 40px rgba(0,0,0,0.1); 
-}
+.hero-visual { flex: 1.2; display: flex; justify-content: flex-end; align-items: center; padding-right: 0; }
+.hero-img-fluid { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 50px 0 0 50px; box-shadow: -15px 15px 40px rgba(0,0,0,0.1); }
 
 /* Tarjeta Partido Glassmorphism */
 .match-glass-section { position: relative; margin-top: -100px; z-index: 10; padding: 0 20px; display: flex; justify-content: center; }
@@ -136,7 +115,7 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
 .dashboard-grid { display: flex; gap: 3rem; }
 .panel-title { font-size: 1.8rem; font-weight: 900; color: var(--navy); margin-bottom: 2rem; border-bottom: 4px solid var(--blue); padding-bottom: 10px; display: inline-block; }
 .stats-panel { flex: 1; }
-.table-card { background: var(--white); box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; }
+.table-card { background: var(--white); box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; border-radius: 28px; overflow: hidden; }
 .clean-table { width: 100%; border-collapse: collapse; text-align: center; }
 .clean-table th { background: var(--navy); color: var(--white); padding: 18px; font-size: 0.85rem; }
 .clean-table td { padding: 18px; border-bottom: 1px solid #f8fafc; color: var(--text-main); font-weight: 600; }
@@ -146,7 +125,7 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
 .empty-logo { height: 35px; width: 35px; background: #e2e8f0; border-radius: 50%; display: inline-block; }
 
 .news-panel { flex: 1.2; }
-.news-list-item { display: flex; background: var(--white); box-shadow: 0 10px 40px rgba(0,0,0,0.04); margin-bottom: 1.5rem; transition: 0.3s; border: 1px solid #f1f5f9; }
+.news-list-item { display: flex; background: var(--white); box-shadow: 0 10px 40px rgba(0,0,0,0.04); margin-bottom: 1.5rem; transition: 0.3s; border: 1px solid #f1f5f9; border-radius: 28px; overflow: hidden; }
 .news-list-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--blue); }
 .news-thumb { width: 180px; background-size: cover; background-position: center; flex-shrink: 0; }
 .news-data { padding: 2rem; }
@@ -154,25 +133,26 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
 .news-data h3 { font-size: 1.3rem; font-weight: 900; color: var(--navy); margin: 0 0 10px 0; line-height: 1.2; }
 .news-data p { font-size: 0.95rem; color: var(--text-muted); }
 
-/* Votación Horizontal (Redondeada y premium) */
+/* Votación Horizontal */
 .interactive-motm { background: var(--navy); padding: 6rem 20px; position: relative; overflow: hidden; }
 .interactive-motm::before { content: ''; position: absolute; top: -50%; left: -10%; width: 50%; height: 200%; background: radial-gradient(circle, rgba(28,59,119,0.4) 0%, transparent 70%); z-index: 0; }
 .motm-layout { max-width: 1100px; margin: 0 auto; display: flex; gap: 5rem; align-items: center; position: relative; z-index: 1; }
 .motm-info { flex: 1; color: var(--text-muted); }
-.live-badge { background: var(--red); color: white; padding: 6px 16px; font-size: 0.75rem; font-weight: 900; margin-bottom: 1.5rem; display: inline-block; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(211,30,43,0.3); }
+.live-badge { background: var(--red); color: white; padding: 6px 16px; font-size: 0.75rem; font-weight: 900; margin-bottom: 1.5rem; display: inline-block; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(211,30,43,0.3); border-radius: 50px; }
 .motm-info h2 { font-size: 3rem; line-height: 1.1; color: var(--white); margin-bottom: 1.5rem; font-weight: 900; }
 .motm-options { flex: 1; display: flex; flex-direction: column; gap: 20px; }
-.player-option { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 20px 25px; display: flex; align-items: center; gap: 20px; transition: 0.3s; backdrop-filter: blur(10px); }
+.player-option { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 20px 25px; display: flex; align-items: center; gap: 20px; transition: 0.3s; backdrop-filter: blur(10px); border-radius: 28px; }
 .player-option:hover { background: rgba(255,255,255,0.08); border-color: var(--blue); transform: translateX(-10px); }
 .player-option img { height: 75px; width: 75px; }
 .opt-details { flex-grow: 1; }
 .opt-details h4 { color: var(--white); font-weight: 900; font-size: 1.3rem; margin-bottom: 3px; }
 .opt-details span { color: #94a3b8; font-size: 0.9rem; font-weight: 600; }
-.vote-btn-premium { background: transparent; border: 2px solid var(--blue); color: var(--white); padding: 12px 24px; font-weight: 900; cursor: pointer; transition: 0.3s; }
+.vote-btn-premium { background: transparent; border: 2px solid var(--blue); color: var(--white); padding: 12px 24px; font-weight: 900; cursor: pointer; transition: 0.3s; border-radius: 50px; }
 .vote-btn-premium:hover { background: var(--blue); box-shadow: 0 4px 15px rgba(28,59,119,0.4); }
 
-/* Footer */
-.footer-clean { background: var(--white); padding: 4rem 20px 3rem; border-top: 1px solid #e2e8f0; }
+/* Footer General */
+.footer-clean, .footer { background: var(--white); padding: 4rem 20px 3rem; border-top: 1px solid #e2e8f0; text-align: center; }
+.footer { padding: 3rem 20px; margin-top: 4rem; color: var(--text-muted); font-size: 0.9rem; }
 .footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
 .footer-brand { height: 70px; border: none; padding: 0; background: transparent; filter: grayscale(100%); opacity: 0.4; transition: 0.3s; }
 .footer-brand:hover { opacity: 0.8; filter: none; }
@@ -180,37 +160,116 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
 .footer-social a { color: var(--text-main); background: #f1f5f9; width: 45px; height: 45px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; margin-left: 15px; font-size: 1.2rem; transition: 0.3s; }
 .footer-social a:hover { color: var(--white); background: var(--blue); transform: translateY(-3px); }
 
-/* Ajustes para Celular y Responsividad */
+/* =======================================================
+   --- ESTILOS PARA SUBPÁGINAS (Plantel, Tienda, Boletos) ---
+   ======================================================= */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); box-shadow: 0 5px 20px rgba(0,0,0,0.05); z-index: 1000; padding: 1rem 5%; }
+.nav-container .logo { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--navy); font-weight: 900; font-size: 1.4rem; letter-spacing: 1px; }
+.nav-container .logo img { height: 45px; width: 45px; }
+
+.page-header { text-align: center; padding: 160px 20px 50px; background: var(--white); border-bottom: 1px solid #e2e8f0; margin-bottom: 2rem; }
+.page-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); color: var(--navy); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+
+/* 1. PLANTEL OFICIAL */
+.roster-section { max-width: 1200px; margin: 0 auto; padding: 2rem 20px; }
+.roster-category { font-size: 2rem; color: var(--navy); border-bottom: 4px solid var(--blue); padding-bottom: 10px; margin-bottom: 2.5rem; display: inline-block; font-weight: 900; }
+.roster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-bottom: 5rem; }
+.player-profile { background: var(--white); border-radius: 28px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; position: relative; }
+.player-profile:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--blue); }
+.player-photo { background: linear-gradient(to top, #e2e8f0, #f8fafc); padding: 30px 0 0; display: flex; justify-content: center; align-items: flex-end; height: 250px; }
+.player-photo img { display: block; max-height: 100%; object-fit: contain; } 
+.player-details { padding: 2.5rem 1.5rem; position: relative; background: var(--white); }
+.player-number { position: absolute; top: -30px; right: 25px; background: var(--navy); color: var(--white); font-size: 1.4rem; font-weight: 900; height: 60px; width: 60px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 4px solid var(--white); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.player-details h3 { color: var(--navy); font-weight: 900; font-size: 1.4rem; margin-bottom: 5px; }
+
+/* 2. TIENDA OFICIAL */
+.store-grid { max-width: 1200px; margin: 3rem auto 6rem; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; }
+.product-card { background: var(--white); border-radius: 28px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9; transition: 0.3s; display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--red); }
+.product-img { background: var(--light-bg); padding: 50px 20px; display: flex; justify-content: center; align-items: center; height: 280px; }
+.product-img img { max-height: 100%; max-width: 80%; object-fit: contain; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.product-card:hover .product-img img { transform: scale(1.15); }
+.product-info { padding: 2.5rem 2rem; display: flex; flex-direction: column; flex-grow: 1; }
+.product-info h3 { color: var(--navy); font-weight: 900; font-size: 1.25rem; margin-bottom: 10px; line-height: 1.3; }
+.product-price { font-size: 1.8rem; font-weight: 900; color: var(--blue); margin-bottom: 25px; }
+.btn-cart { background: transparent; border: 2px solid var(--blue); color: var(--blue); padding: 14px 20px; border-radius: 50px; font-weight: 900; cursor: pointer; transition: 0.3s; width: 100%; margin-top: auto; letter-spacing: 1px; }
+.btn-cart:hover { background: var(--blue); color: var(--white); box-shadow: 0 5px 15px rgba(28,59,119,0.3); }
+
+/* 3. BOLETOS Y ABONOS */
+.pricing-grid { max-width: 950px; margin: 3rem auto 6rem; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center; }
+.price-card { background: var(--white); border-radius: 28px; padding: 3.5rem 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9; transition: 0.3s; position: relative; }
+.price-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.price-card h3 { font-size: 1.6rem; margin-bottom: 8px; letter-spacing: 1px; }
+.price-amount { font-size: 4rem; font-weight: 900; color: var(--navy); margin: 1.5rem 0 2rem; line-height: 1; display: flex; justify-content: center; align-items: flex-start; gap: 5px; }
+.price-amount span { font-size: 1.2rem; color: var(--text-muted); font-weight: 700; margin-top: 5px; }
+.price-features { list-style: none; margin-bottom: 3rem; text-align: left; }
+.price-features li { padding: 14px 0; border-bottom: 1px solid #f1f5f9; color: var(--text-main); font-weight: 600; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; }
+.price-features li i { color: var(--blue); width: 24px; text-align: center; font-size: 1.1rem; }
+
+.price-card.premium { background: var(--navy); color: var(--white); transform: scale(1.05); border: none; box-shadow: 0 20px 50px rgba(13,27,42,0.25); }
+.price-card.premium:hover { transform: scale(1.05) translateY(-8px); }
+.price-card.premium h3 { color: var(--red); }
+.price-card.premium p { color: #94a3b8; }
+.price-card.premium .price-amount { color: var(--white); }
+.price-card.premium .price-amount span { color: #cbd5e1; }
+.price-card.premium .price-features li { border-bottom-color: rgba(255,255,255,0.1); color: var(--white); }
+.price-card.premium .price-features li i { color: var(--red); }
+
+.btn-primary { background: var(--blue); color: var(--white); border: 2px solid var(--blue); padding: 16px 30px; border-radius: 50px; font-weight: 900; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 5px 15px rgba(28,59,119,0.2); }
+.btn-primary:hover { background: transparent; color: var(--blue); box-shadow: none; }
+.price-card.premium .btn-primary { background: var(--red); border-color: var(--red); box-shadow: 0 5px 15px rgba(211,30,43,0.3); }
+.price-card.premium .btn-primary:hover { background: transparent; color: var(--red); box-shadow: none; }
+
+
+/* =======================================================
+   --- AJUSTES RESPONSIVOS (Móvil Premium) ---
+   ======================================================= */
 @media (max-width: 1024px) {
     .dashboard-grid { flex-direction: column; }
     .motm-layout { gap: 3rem; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 500px; }
+    .price-card.premium { transform: scale(1); }
+    .price-card.premium:hover { transform: translateY(-8px); }
 }
 
 @media (max-width: 900px) {
+    /* Hero Principal en Celular: Fiel a la captura (Izquierda) + Foto abajo */
     .hero-split { 
         flex-direction: column; 
-        padding-top: 120px;
-        padding-bottom: 120px; 
+        padding-top: 110px; 
+        padding-bottom: 100px; 
+        gap: 2.5rem;
     }
     .hero-text { 
-        padding: 0 5% 3rem; 
-        text-align: center; 
-        align-items: center; 
+        padding: 0 20px; 
+        text-align: left; /* Mantiene la estética de la imagen que enviaste */
+        align-items: flex-start; 
     }
-    .hero-buttons { justify-content: center; }
+    .hero-text h1 { font-size: clamp(2.8rem, 8vw, 3.5rem); }
+    .hero-buttons { 
+        justify-content: flex-start; 
+        width: 100%;
+        flex-direction: column; /* Botones apilados para mayor usabilidad móvil */
+        gap: 15px;
+    }
+    .btn-solid-red, .btn-outline-blue {
+        width: 100%;
+        text-align: center;
+    }
     
     .hero-visual { 
         width: 100%;
-        justify-content: center;
         padding: 0 20px; 
+        justify-content: center;
     }
-    .hero-img-fluid {
-        border-radius: 30px; 
-        width: 100%;
-        aspect-ratio: auto; /* Dejamos que en móvil tome su tamaño natural o sea más alto si es necesario */
+    .hero-img-fluid { 
+        border-radius: 28px; /* Todas las esquinas curvas en móvil */
+        width: 100%; 
+        aspect-ratio: 4 / 3; /* Proporción ideal para celular */
     }
     
-    .match-glass-section { margin-top: -60px; }
+    /* Ajustes Generales Móvil */
+    .match-glass-section { margin-top: -50px; }
     .glass-card { padding: 2rem 1.5rem; }
     .match-teams { flex-direction: column; gap: 20px; }
     .colon { display: none; } 
@@ -221,6 +280,7 @@ img[src="imagen.png"], .team-shield, .micro-logo, .nav-logo {
     .player-option:hover { transform: translateY(-5px); }
     
     .footer-content { flex-direction: column; text-align: center; }
+    .page-header { padding: 120px 20px 40px; }
 }
 
 @media (max-width: 768px) {
