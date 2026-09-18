@@ -94,3 +94,119 @@ function updateCountdown() {
     document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
     document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
 }
+
+// --- GENERADOR AUTOMÁTICO DE GOTAS DE AGUA (LIQUID GLASS) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const waterContainer = document.getElementById('waterContainer');
+    if (!waterContainer) return;
+
+    function createWaterDrop() {
+        const drop = document.createElement('div');
+        drop.classList.add('water-drop');
+
+        // Tamaño aleatorio para la gota
+        const size = Math.random() * 60 + 30; // Entre 30px y 90px
+        drop.style.width = `${size}px`;
+        drop.style.height = `${size}px`;
+
+        // Posición aleatoria dentro del Hero
+        const posX = Math.random() * window.innerWidth;
+        const posY = Math.random() * (window.innerHeight * 0.7); // En la parte superior/media
+        drop.style.left = `${posX}px`;
+        drop.style.top = `${posY}px`;
+
+        waterContainer.appendChild(drop);
+
+        // Eliminar el elemento del DOM al terminar la animación para optimizar rendimiento
+        setTimeout(() => {
+            drop.remove();
+        }, 2500);
+    }
+
+    // Generar una salpicadura nueva cada 1.2 segundos
+    setInterval(createWaterDrop, 1200);
+});
+
+// --- SIMULADOR DE LIGUILLA G14 ---
+document.addEventListener('DOMContentLoaded', () => {
+    const btnSimular = document.getElementById('btnSimular');
+    if (!btnSimular) return;
+
+    btnSimular.addEventListener('click', () => {
+        // Leer goles ingresados
+        const gA1 = parseInt(document.getElementById('scoreA1').value) || 0;
+        const gB1 = parseInt(document.getElementById('scoreB1').value) || 0;
+        
+        const gA2 = parseInt(document.getElementById('scoreA2').value) || 0;
+        const gB2 = parseInt(document.getElementById('scoreB2').value) || 0;
+
+        // Base inicial de puntos y goles antes de los 2 partidos simulados
+        // Charales parte con 12 pts y +6 de diferencia
+        let ptsCharales = 12;
+        let difCharales = 6;
+
+        let ptsDiablos = 9;
+        let difDiablos = 4;
+
+        let ptsAcatlan = 7;
+        let difAcatlan = 2;
+
+        // Partido 1: Charales vs Diablos
+        difCharales += (gA1 - gB1);
+        difDiablos += (gB1 - gA1);
+        if (gA1 > gB1) {
+            ptsCharales += 3;
+        } else if (gA1 === gB1) {
+            ptsCharales += 1;
+            ptsDiablos += 1;
+        } else {
+            ptsDiablos += 3;
+        }
+
+        // Partido 2: Charales vs Acatlán
+        difCharales += (gA2 - gB2);
+        difAcatlan += (gB2 - gA2);
+        if (gA2 > gB2) {
+            ptsCharales += 3;
+        } else if (gA2 === gB2) {
+            ptsCharales += 1;
+            ptsAcatlan += 1;
+        } else {
+            ptsAcatlan += 3;
+        }
+
+        // Actualizar en el DOM de la tabla proyectada
+        document.getElementById('ptsCharales').innerText = ptsCharales;
+        document.getElementById('difCharales').innerText = (difCharales >= 0 ? '+' : '') + difCharales;
+
+        document.getElementById('ptsDiablos').innerText = ptsDiablos;
+        document.getElementById('difDiablos').innerText = (difDiablos >= 0 ? '+' : '') + difDiablos;
+
+        document.getElementById('ptsAcatlan').innerText = ptsAcatlan;
+        document.getElementById('difAcatlan').innerText = (difAcatlan >= 0 ? '+' : '') + difAcatlan;
+
+        // Animación sutil de actualización
+        const tableBox = document.getElementById('simTable');
+        tableBox.style.transform = 'scale(1.02)';
+        setTimeout(() => {
+            tableBox.style.transform = 'scale(1)';
+        }, 200);
+    });
+});
+
+// --- CONEXIÓN AUTOMÁTICA CON GOOGLE SHEETS (APPS SCRIPT) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycby9RJE6aLI5rzpG27QHc7u9Gzxwc564Ma-Mh3aouUPbwkuDNmZ66s3ZVn_zFk3Ct7o/exec"; // Reemplaza con tu URL generada
+
+    if (WEB_APP_URL.includes("PEGAR_AQUI")) return; // Evita error si no está configurado aún
+
+    fetch(WEB_APP_URL)
+        .then(response => response.json())
+        .then(data => {
+            console.log("Datos sincronizados con Google Sheets:", data);
+            
+            // Aquí puedes actualizar dinámicamente los elementos del DOM 
+            // de la tabla de posiciones con data.tabla y de los partidos con data.partidos.
+        })
+        .catch(error => console.error("Error al sincronizar con Google Sheets:", error));
+});
