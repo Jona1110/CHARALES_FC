@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Oficial | Charales de Chapala</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/png" href="../imagen.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../image.png" alt="Escudo Charales">
+                <span>CHARALES</span>
+            </a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>LA ARMADURA <span class="txt-red">OFICIAL</span></h1>
+        <p class="txt-gray">Viste los colores de Chapala con orgullo.</p>
+    </header>
+
+    <section class="store-grid">
+        <!-- Producto 1 -->
+        <article class="product-card">
+            <div class="product-img">
+                <!-- Idealmente un PNG de la playera -->
+                <img src="../image.png" alt="Jersey Local" style="border-radius:0; border:none; filter: grayscale(100%); width: 120px;">
+            </div>
+            <div class="product-info">
+                <h3>Jersey Local 26/27 (Azul)</h3>
+                <div class="product-price">$599.00</div>
+                <button class="btn-cart">AÑADIR AL CARRITO</button>
+            </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="product-card">
+            <div class="product-img">
+                <img src="../image.png" alt="Jersey Visita" style="border-radius:0; border:none; filter: sepia(100%) hue-rotate(300deg); width: 120px;">
+            </div>
+            <div class="product-info">
+                <h3>Jersey Visita 26/27 (Blanco)</h3>
+                <div class="product-price">$599.00</div>
+                <button class="btn-cart">AÑADIR AL CARRITO</button>
+            </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="product-card">
+            <div class="product-img">
+                <img src="../image.png" alt="Gorra" style="border-radius:0; border:none; width: 120px;">
+            </div>
+            <div class="product-info">
+                <h3>Gorra Oficial Charales</h3>
+                <div class="product-price">$250.00</div>
+                <button class="btn-cart">AÑADIR AL CARRITO</button>
+            </div>
+        </article>
+    </section>
+
+    <footer class="footer">
+        <p>© 2026 Club de Fútbol Charales de Chapala. Desarrollado por <span class="txt-blue-bold">DIGITALITY</span>.</p>
+    </footer>
+
+    <!-- Lógica básica para el carrito (opcional para el index) -->
+    <script>
+        document.querySelectorAll('.btn-cart').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Producto añadido al carrito exitosamente.');
+                this.innerText = '✓ AÑADIDO';
+                this.style.background = '#d31e2b'; // Cambia a rojo al agregar
+            });
+        });
+    </script>
+</body>
+</html>

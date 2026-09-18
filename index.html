@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charales de Chapala | Sitio Oficial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagen.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="theme-light">
+
+    <!-- Navegación Flotante Premium (Bordes extra redondeados) -->
+    <nav class="navbar-floating" id="navbar">
+        <div class="nav-brand">
+            <img src="imagen.png" alt="Escudo Charales" class="nav-logo">
+            <span class="nav-title">CHARALES</span>
+        </div>
+        
+        <div class="nav-links">
+            <a href="index.html" class="active">INICIO</a>
+            <a href="Compra_Boletos/index.html">BOLETOS</a>
+            <a href="Plantilla/equipo.html">PLANTEL</a>
+            <a href="Tienda/tienda.html">TIENDA</a>
+            <a href="#noticias">NOTICIAS</a>
+        </div>
+
+        <div class="nav-actions">
+            <button class="btn-digitality rounded-pill" id="btnMenuProy">PROYECTO 360°</button>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu" id="navMenu">
+        <span class="close-menu" id="closeMenu">&times;</span>
+        <a href="index.html">INICIO</a>
+        <a href="Compra_Boletos/index.html">BOLETOS Y ABONOS</a>
+        <a href="Plantilla/equipo.html">PLANTEL OFICIAL</a>
+        <a href="Tienda/tienda.html">TIENDA OFICIAL</a>
+    </div>
+
+   <!-- Hero Dividido (Texto Izquierda / Imagen Derecha Responsiva) -->
+    <header class="hero-split">
+        <div class="hero-text">
+            <span class="season-badge rounded-pill">TEMPORADA 26/27</span>
+            <h1>EL ORGULLO<br><span class="txt-red">DEL LAGO</span></h1>
+            <p>Pasión, tradición y fútbol. Defendiendo los colores de Chapala en cada jornada de la Liga TDP MX.</p>
+            <div class="hero-buttons">
+                <a href="Compra_Boletos/index.html" class="btn-solid-red rounded-pill">ASEGURA TU LUGAR</a>
+                <a href="Tienda/tienda.html" class="btn-outline-blue rounded-pill">COMPRAR ARMADURA</a>
+            </div>
+        </div>
+        
+        <!-- Nuevo contenedor con imagen responsiva portada1.png -->
+        <div class="hero-visual">
+            <img src="portada1.png" alt="Acción en el Estadio Juan Rayo" class="hero-img-fluid">
+        </div>
+    </header>
+
+    <!-- Tarjeta de Partido Glassmorphism -->
+    <section class="match-glass-section">
+        <div class="glass-card rounded-card">
+            <div class="glass-header">
+                <span class="tag-league rounded-pill">LIGA TDP MX - G14</span>
+                <span class="tag-stadium rounded-pill"><i class="fas fa-map-marker-alt"></i> Municipal "Juan Rayo"</span>
+            </div>
+            
+            <div class="match-teams">
+                <div class="team-col">
+                    <img src="imagen.png" alt="Charales" class="team-shield">
+                    <span class="team-name">CHARALES</span>
+                </div>
+                <div class="match-center-info">
+                    <div class="vs">VS</div>
+                    <div class="date-badge rounded-pill">03 OCT 2026 | 16:00 HRS</div>
+                </div>
+                <div class="team-col">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Logo_Gorilas_de_Juanacatlan.png/120px-Logo_Gorilas_de_Juanacatlan.png" alt="Rival" class="team-shield">
+                    <span class="team-name">GORILAS FC</span>
+                </div>
+            </div>
+
+            <div class="countdown-row" id="countdown">
+                <div class="time-unit"><span id="days">00</span><small>DÍAS</small></div><span class="colon">:</span>
+                <div class="time-unit"><span id="hours">00</span><small>HRS</small></div><span class="colon">:</span>
+                <div class="time-unit"><span id="minutes">00</span><small>MIN</small></div><span class="colon">:</span>
+                <div class="time-unit"><span id="seconds">00</span><small>SEG</small></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel Infinito de Patrocinadores -->
+    <section class="sponsors-ticker">
+        <p class="ticker-label">RED COMERCIAL OFICIAL</p>
+        <div class="marquee-wrapper">
+            <div class="marquee-track">
+                <div class="sponsor">EMPRESA LOCAL 1</div>
+                <div class="sponsor">PATROCINADOR MAYOR</div>
+                <div class="sponsor">MARCA AGUA CHAPALA</div>
+                <div class="sponsor">SOCIO COMERCIAL 4</div>
+                <div class="sponsor">EMPRESA LOCAL 1</div>
+                <div class="sponsor">PATROCINADOR MAYOR</div>
+                <div class="sponsor">MARCA AGUA CHAPALA</div>
+                <div class="sponsor">SOCIO COMERCIAL 4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Dual: Estadísticas y Noticias en paralelo -->
+    <section class="dashboard-section" id="noticias">
+        <div class="dashboard-grid">
+            <!-- Izquierda: Tabla -->
+            <div class="stats-panel">
+                <h2 class="panel-title">POSICIONES <span class="txt-blue">G14</span></h2>
+                <div class="table-card rounded-card">
+                    <table class="clean-table">
+                        <thead>
+                            <tr>
+                                <th>POS</th>
+                                <th>CLUB</th>
+                                <th>PTS</th>
+                                <th>DIF</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row">
+                                <td>1</td>
+                                <td class="td-team"><img src="imagen.png" class="micro-logo"> Charales</td>
+                                <td class="txt-bold">12</td>
+                                <td class="txt-blue">+6</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td class="td-team"><span class="empty-logo"></span> Diablos</td>
+                                <td>9</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td class="td-team"><span class="empty-logo"></span> Acatlán</td>
+                                <td>7</td>
+                                <td>+2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Derecha: Noticias -->
+            <div class="news-panel">
+                <h2 class="panel-title">ÚLTIMA <span class="txt-red">HORA</span></h2>
+                <article class="news-list-item rounded-card">
+                    <div class="news-thumb" style="background-image: url('https://images.unsplash.com/photo-1518609878373-06d740f60d8b?auto=format&fit=crop&q=80')"></div>
+                    <div class="news-data">
+                        <span class="news-date">15 SEP 2026</span>
+                        <h3>Fortaleza en el Juan Rayo</h3>
+                        <p>El equipo prepara su estrategia para el próximo derbi regional.</p>
+                    </div>
+                </article>
+                <article class="news-list-item rounded-card">
+                    <div class="news-thumb" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80')"></div>
+                    <div class="news-data">
+                        <span class="news-date">12 SEP 2026</span>
+                        <h3>Descubre la nueva piel</h3>
+                        <p>Presentamos la indumentaria oficial que vestirá Chapala.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jugador del Partido -->
+    <section class="interactive-motm">
+        <div class="motm-layout">
+            <div class="motm-info">
+                <span class="live-badge rounded-pill">INTERACTIVO</span>
+                <h2>ELIGE AL <span class="txt-blue">CHARAL</span><br>DEL PARTIDO</h2>
+                <p>La afición decide. Vota por el jugador más determinante, presentado por nuestra red de patrocinadores.</p>
+            </div>
+            <div class="motm-options">
+                <div class="player-option rounded-card">
+                    <img src="imagen.png" alt="Jugador">
+                    <div class="opt-details">
+                        <h4>Miguel S.</h4>
+                        <span>#10 | Medio</span>
+                    </div>
+                    <button class="vote-btn-premium rounded-pill">VOTAR</button>
+                </div>
+                <div class="player-option rounded-card">
+                    <img src="imagen.png" alt="Jugador">
+                    <div class="opt-details">
+                        <h4>Roberto G.</h4>
+                        <span>#1 | Portero</span>
+                    </div>
+                    <button class="vote-btn-premium rounded-pill">VOTAR</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Corporativo -->
+    <footer class="footer-clean">
+        <div class="footer-content">
+            <img src="imagen.png" alt="Charales" class="footer-brand">
+            <div class="footer-text">
+                <p>© 2026 Club de Fútbol Charales de Chapala. Todos los derechos reservados.</p>
+                <p>Ingeniería y Desarrollo Web por <span class="txt-blue-bold">DIGITALITY</span></p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
