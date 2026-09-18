@@ -43,8 +43,11 @@
         <a href="Tienda/tienda.html">TIENDA OFICIAL</a>
     </div>
 
-   <!-- Hero Inmersivo (Imagen de fondo integrada) -->
+   <!-- Hero Inmersivo con efecto de gotas del Lago de Chapala -->
     <header class="hero-split">
+        <!-- Contenedor dinámico de gotas líquidas -->
+        <div class="water-ripple-container" id="waterContainer"></div>
+
         <div class="hero-text">
             <span class="season-badge rounded-pill">TEMPORADA 26/27</span>
             <h1>EL ORGULLO<br><span class="txt-red">DEL LAGO</span></h1>
@@ -162,6 +165,113 @@
                         <p>Presentamos la indumentaria oficial que vestirá Chapala.</p>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simulador de Resultados / Calculadora de Liguilla (Optimizado Móvil) -->
+    <section class="simulator-section" id="simulador">
+        <div class="simulator-container rounded-card">
+            <div class="simulator-header">
+                <span class="live-badge rounded-pill"><i class="fas fa-chart-line"></i> CENTRO DE INTELIGENCIA DEPORTIVA</span>
+                <h2>SIMULADOR TÁCTICO <span class="txt-red">G14</span></h2>
+                <p>Proyecta los escenarios de la jornada y visualiza el comportamiento de la tabla general en tiempo real.</p>
+            </div>
+
+            <div class="simulator-grid">
+                <!-- Columna de Partidos a Simular -->
+                <div class="sim-matches-box">
+                    <div class="box-title-row">
+                        <i class="fas fa-futbol txt-red"></i>
+                        <h3>CALCULADORA DE JORNADA</h3>
+                    </div>
+                    
+                    <div class="sim-match-item">
+                        <!-- Equipo Local -->
+                        <div class="sim-team-col">
+                            <img src="imagen.png" class="mini-crest">
+                            <span class="team-lbl">Charales</span>
+                        </div>
+                        
+                        <!-- Marcador Central -->
+                        <div class="score-inputs">
+                            <input type="number" min="0" value="2" id="scoreA1" class="score-input">
+                            <span class="vs-dash">-</span>
+                            <input type="number" min="0" value="1" id="scoreB1" class="score-input">
+                        </div>
+
+                        <!-- Equipo Visitante -->
+                        <div class="sim-team-col">
+                            <div class="empty-logo-sm"></div>
+                            <span class="team-lbl">Diablos</span>
+                        </div>
+                    </div>
+
+                    <div class="sim-match-item">
+                        <!-- Equipo Local -->
+                        <div class="sim-team-col">
+                            <img src="imagen.png" class="mini-crest">
+                            <span class="team-lbl">Charales</span>
+                        </div>
+                        
+                        <!-- Marcador Central -->
+                        <div class="score-inputs">
+                            <input type="number" min="0" value="1" id="scoreA2" class="score-input">
+                            <span class="vs-dash">-</span>
+                            <input type="number" min="0" value="1" id="scoreB2" class="score-input">
+                        </div>
+
+                        <!-- Equipo Visitante -->
+                        <div class="sim-team-col">
+                            <div class="empty-logo-sm"></div>
+                            <span class="team-lbl">Acatlán</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-sim-action rounded-pill" id="btnSimular">
+                        <i class="fas fa-sync-alt"></i> CALCULAR PROYECCIÓN
+                    </button>
+                </div>
+
+                <!-- Columna de Tabla Simulada -->
+                <div class="sim-table-box">
+                    <div class="box-title-row">
+                        <i class="fas fa-trophy txt-blue"></i>
+                        <h3>TABLA GENERAL SIMULADA</h3>
+                    </div>
+                    <div class="table-card rounded-card">
+                        <table class="clean-table" id="simTable">
+                            <thead>
+                                <tr>
+                                    <th>POS</th>
+                                    <th>CLUB</th>
+                                    <th>PTS</th>
+                                    <th>DIF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row" data-team="charales">
+                                    <td>1</td>
+                                    <td class="td-team"><img src="imagen.png" class="micro-logo"> Charales</td>
+                                    <td class="txt-bold" id="ptsCharales">18</td>
+                                    <td class="txt-blue" id="difCharales">+8</td>
+                                </tr>
+                                <tr data-team="diablos">
+                                    <td>2</td>
+                                    <td class="td-team"><span class="empty-logo"></span> Diablos</td>
+                                    <td id="ptsDiablos">9</td>
+                                    <td id="difDiablos">+3</td>
+                                </tr>
+                                <tr data-team="acatlan">
+                                    <td>3</td>
+                                    <td class="td-team"><span class="empty-logo"></span> Acatlán</td>
+                                    <td id="ptsAcatlan">8</td>
+                                    <td id="difAcatlan">+1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
